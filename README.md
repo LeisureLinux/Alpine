@@ -50,7 +50,7 @@
         - $ virt-clone -o leisure-00 -n leisure-01 --auto; 
         - 启动 leisure-01；修改主机名： hostname leisure-01; setup-hostname leisure-01; 
         - 运行 .b 备份；shutdown guest； 
-        - $ virsh edit leisure-01 修改 apkvol 文件路径
+        - $ virsh edit leisure-01 修改 apkovl 文件路径
   - Q9: 我忘记当前机器启动的 apkovl 是哪个文件了？
     - A9:  查看 /proc/cmdline 里的 apkovl= 后面的值
 
