@@ -1,5 +1,7 @@
 #### 欢迎使用 Leisure Linux 制作的 AlpineOS 无盘站虚拟机
 ##### A diskless AlpineOS VM can auto backup the $HOME data to local/remote storage before shutdown/reboot
+#### 本文关联视频： 
+  - https://www.bilibili.com/video/BV1434y177aX/
 
 #### 如何创建无盘虚拟机(默认分配4核，512M内存)
   1. git clone 本仓库;  cd Alpine
@@ -44,7 +46,11 @@
     - A7:  修改 CPU: $ virsh setvcpus --config  --count 2 --domain leisure-00 ； 修改内存： 
      $ virsh setmem  --config --size 2G --domain leisure-00
   - Q8: 我想多跑几个这样的无盘站，有啥办法快速复制？
-    - A8: $ virt-clone -o leisure-00 -n leisure-01 --auto; 启动 leisure-01；修改主机名： hostname leisure-01; setup-hostname leisure-01; 运行 .b 备份；shutdown guest； $ virsh edit leisure-01 修改 apkvol 文件路径
+    - A8: 
+        - $ virt-clone -o leisure-00 -n leisure-01 --auto; 
+        - 启动 leisure-01；修改主机名： hostname leisure-01; setup-hostname leisure-01; 
+        - 运行 .b 备份；shutdown guest； 
+        - $ virsh edit leisure-01 修改 apkvol 文件路径
   - Q9: 我忘记当前机器启动的 apkovl 是哪个文件了？
     - A9:  查看 /proc/cmdline 里的 apkovl= 后面的值
 
