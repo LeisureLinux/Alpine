@@ -21,11 +21,18 @@
     - ssh-copy-id username@remotehost
   - 需要临时备份，可以在普通用户下运行 .b 命令，这个 alias 在 ~/.zshrc 里定义，请根据自己的情况修改
 
+#### 关于 Alpine Linux 以及 OpenRC
+  - Alpine Linux 是 docker 的默认内核，因此学习使用它，对于理解 docker 也有帮助
+  - Alpine Linux 使用 musl 作为 C lib 库，很多软件包都要重新编译，市场上有些没有源码的软件就无法得到，因此软件包不丰富
+  - OpenRC 真的是非常简单，添加了 before/after 之类的功能，避免之前 Sysvinit 使用前缀数字来调整启动顺序
+
 #### FAQ
   - Q1: could not open kernel/initrd file
     - A1: 权限问题，把下载下来的文件路径切换到具有 755 权限的目录下
   - Q2: 如何安装图形界面(X-Windows), Xfce ?
-    - A2: 参考： https://wiki.alpinelinux.org/wiki/Xfce ，但是要实现无盘站的图形界面，不但要增加虚拟机内存，最核心的是需要增加 modloop 到内核参数，即： modloop=http://mirrors.nju.edu.cn/alpine/edge/releases/x86_64/netboot/modloop-lts，详细可以阅读 /etc/init.d/modloop 脚本
+    - A2: 参考： https://wiki.alpinelinux.org/wiki/Xfce ，但是要实现无盘站的图形界面，不但要增加虚拟机内存，最核心的是需要增加 modloop 到内核参数，即： modloop=http://mirrors.nju.edu.cn/alpine/edge/releases/x86_64/netboot/modloop-lts，详细可以阅读 /etc/init.d/modloop 脚本。视频教程： https://www.bilibili.com/video/BV163411V7Un/
   - Q3: 为什么不使用 /etc/local.d 来实现数据自动备份？
     - A3: /etc/local.d 内的普通脚本（不是 openrc 脚本），依赖于 local 服务的启用，只有 local 服务停止时，才会执行里面的 .stop 脚本 ，不能实现希望的重启时自动备份数据的需求。
+  - Q4: 你的镜像内包含了哪些包？
+    - A4: 使用命令：$ tar xzf leisure-00.apkovl.tar.gz etc/apk/world -O --|sort|xargs 可以看到 36 个包，核心添加的是： avahi bind-tools byobu chrony coreutils dbus findmnt git htop iproute2 jq less less-doc lsblk lsof mandoc mandoc-apropos mandoc-doc man-pages neofetch openrc-doc openssh-client openssh-client-common openssh-server openssl pciutils procps qemu-guest-agent shadow sudo tzdata util-linux-misc vim zsh
 
