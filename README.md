@@ -7,7 +7,7 @@
   4. 修改 leisure-00.xml 文件的 kernel/initrd 两行内的文件路径，修改 cmdline 中 apkovl 对应的值为以上 URL
   5. 定义虚拟机：virsh define --file leisure-00.xml
   6. 启动虚拟机：virsh start leisure-00
-    - 进入 console 查看：virsh console leisure-00
+      - 进入 console 查看：virsh console leisure-00
       - root 账号密码： LeisureLinux
       - leisure 账号密码： leisurelinux
       - 登录后，请参考 ~leisure/README.md 
