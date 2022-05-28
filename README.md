@@ -11,3 +11,8 @@
       - root 账号密码： LeisureLinux
       - leisure 账号密码： leisurelinux
       - 登录后，请参考 ~leisure/README.md 
+
+
+#### FAQ
+  - Q1: could not open kernel/initrd file
+  - A1: 权限问题，把下载下来的文件路径切换到具有 755 权限的目录下
