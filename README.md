@@ -1,5 +1,5 @@
-#### 欢迎使用 Leisure Linux 制作的 AlpineOS 无盘站虚拟机
-##### A diskless AlpineOS VM can auto backup the $HOME data to local/remote storage before shutdown/reboot
+#### 如何让 Alpine Linux 无盘机在关机或者重启前自动保存数据
+##### Auto backup the $HOME data on a diskless Alpine Linux OS to local/remote storage before shutdown/reboot
 #### 本文关联视频： 
   - https://www.bilibili.com/video/BV1434y177aX/
 
