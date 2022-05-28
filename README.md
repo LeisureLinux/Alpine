@@ -35,4 +35,8 @@
     - A3: /etc/local.d 内的普通脚本（不是 openrc 脚本），依赖于 local 服务的启用，只有 local 服务停止时，才会执行里面的 .stop 脚本 ，不能实现希望的重启时自动备份数据的需求。
   - Q4: 你的镜像内包含了哪些包？
     - A4: 使用命令：$ tar xzf leisure-00.apkovl.tar.gz etc/apk/world -O --|sort|xargs 可以看到 36 个包，核心添加的是： avahi bind-tools byobu chrony coreutils dbus findmnt git htop iproute2 jq less less-doc lsblk lsof mandoc mandoc-apropos mandoc-doc man-pages neofetch openrc-doc openssh-client openssh-client-common openssh-server openssl pciutils procps qemu-guest-agent shadow sudo tzdata util-linux-misc vim zsh
+  - Q5: 要增加或者删除备份的文件或者目录，怎么办？
+    - A5:  lbu 命令有 include 和 exclude 命令可以解决你的问题
+  - Q6: 树莓派上能跑吗？能跑虚拟的树莓派吗？或者 RISC-V 的虚拟机？
+    - A6:  可以。视频教程： https://www.bilibili.com/video/BV1T34y177xa/
 
